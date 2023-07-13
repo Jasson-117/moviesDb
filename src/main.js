@@ -263,6 +263,6 @@ async function getMovieByCategory(id){
 async function getCategoryToDetail(id){
 	const {data} = await api(`movie/${id}/recommendations` );
 	const categoryDetail = data.results
-	createMovies(categoryDetail,relatedMoviesContainer,c)
+	createMovies(categoryDetail,relatedMoviesContainer,{lazyLoad:true,clean:true})
 }
 
